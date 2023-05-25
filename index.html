@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Open+Sans&display=swap');
+
+  *{
+    font-family: 'Be Vietnam Pro', sans-serif;
+font-family: 'Open Sans', sans-serif;
+     align-items: center;   
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .car-logo{
+    position: relative;
+    bottom: 70px;
+  }
+
+  :root {
+    --color-primary: hsl(12, 88%, 59%);
+    --color-secondary: hsl(228, 39%, 23%);
+    --color-neutral-1: hsl(227, 12%, 61%);
+    --color-neutral-2: hsl(233, 12%, 13%);
+    --color-neutral-3: hsl(13, 100%, 96%);
+    --color-neutral-4: hsl(0, 0%, 98%);
+  }
+
+  nav{
+    padding: 25px;
+    display: flex;
+    background-color: #ccc;
+    margin-bottom: 80px;
+    /* position: fixed;
+right: 0;
+left: 0;
+top: 0; */
+
+  }
+
+  .item{
+    flex: 1;
+  }
+  .bg-and-box{
+     /*added*/
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .tab {
+    position: absolute;
+    right: -122px;
+    z-index: -1;
+    display: hidden;
+    width: 90%;
+    top: -294px;
+}
+
+  .box{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .bg-img{
+    flex-basis: 50%;
+  }
+  .img{
+    max-width:90%;
+  }
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 80%;
+    margin: auto;
+    padding: 25px;
+    margin-bottom: 150px;
+  }
+  .flex-items-div{
+    width: 50%;
+    min-width: 0;
+  }
+  .difference{
+    width: 50%;
+    min-width: 0;
+    
+  }
+  .flex-item{
+    flex-basis: 50%;
+    display: flex;
+    margin-bottom: 10px;    
+  }
+
+  .flex-icon{
+    flex-basis: 10%;
+    padding: 10px;
+    align-self:baseline;
+    width: 100%;
+border: 1px;
+background: orange;
+border-radius: 100px;
+text-align: center;
+  }
+  .flex-content{
+    flex-basis: 90%;
+  }
+
+  .difference{
+    margin-bottom: 10px;
+  }
+
+
+  .people-carousel{
+    transition: transform ease-in-out 0.6s;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    margin-top: 95px;
+  }
+  .text{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 25px;
+  }
+
+  .carousel-item{
+    box-sizing: border-box;
+    background-color: darkgray;
+    flex: 0 0 33.33%;
+    display: flex;
+flex-direction: column;
+margin: 3px;
+background-color: var(--color-neutral-4);
+
+  }
+
+  .car-p{
+    padding: 20px;
+  }
+
+  .btn{
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  footer{
+    background-color: hsl(12, 88%, 59%);
+    height: 15vh;
+  }
+  .wrapper{
+    display: flex;
+flex-grow: 1;
+flex: 0 0 250px;
+flex-direction: column;
+  }
+  .difference-div{
+    padding: 20px;
+  }
+  .flex-item-heading{
+    padding: 10px;
+  }
+  
+  .b-btn{
+    border: 1px;
+    width: 100%;
+    height: 9vh;
+    border-radius: 100px;
+    background-color: hsl(12, 88%, 59%);
+    color: white;
+  }
+  .para{
+    padding: 10px;
+  }
+
+
+  @media screen and (max-width: 1024px) {
+  .info {
+    flex-direction: column;
+  }
+  
+  .flex-items-div {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .carousel-item{
+    flex-basis: 50%;
+
+  }
+
+  .heading, .para {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+}
+  @media screen and (max-width:767px){
+    .info{
+      flex-direction: column;
+      width: 95%;
+    }
+    .difference, .flex-items-div{
+      width: 90%;
+    }
+    .bg-and-box{
+      flex-direction: column;
+    }
+    .bg-img{
+      display: flex;
+      justify-content: center;
+    }
+    .box{
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .heading, .para{
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .b-btn{
+      height: 5vh;
+      padding: 10px;
+    }
+    .carousel-item{
+      flex-basis: 100%;
+    }
+    footer{
+      flex-direction: column;
+    }
+    .out-btn{
+      width: 1000px;
+    }
+
+    .wrapper{
+      display: flex;
+flex-direction: column;
+justify-content: center;
+flex-grow: 1;
+flex: 0 0 100%;
+flex-direction: column;
+  
+    }
+
+    .flex-items-div {
+    width: 100%;
+  }
+  .flex-item {
+    flex-basis: 100%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+  
+  .out-btn{
+    width: 20vw; color: white; background-color: hsl(12, 88%, 59%); border: 1px; height: 9vh; margin: auto; border-radius: 100px;
+  }
+  .strt-btn{
+    border-radius: 100px; width: 20vw; color: white; 
+    background-color: var(--color-neutral-3); border: 1px; height: 9vh;
+    font-size: large;
+    color: hsl(12, 88%, 59%);
+  }
+
+  .flex-ul{
+    display: flex;
+  }
+  li{
+    flex-grow: 1;
+    list-style-type: none;
+    max-width: 100px;
+  }
+  .item1{
+    flex-basis: 15%;
+  }
+  .item2{
+    flex-basis: 60%;
+  }
+
+  .item3{
+    flex-basis: 25%;
+  }
+</style>
+<body>
+<!--   
+  <nav>
+    <div class="logo item1">
+      <img src="images/logo.svg" alt="">
+    </div>
+
+    <div class="nav-items item2">
+      <ul class="flex-ul">
+        <li>Pricing</li>
+        <li>Product</li>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Community</li>
+      </ul>
+    </div>
+  
+    <div class="item3">
+      <button class="b-btn">Sign In</button>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.svg" alt="">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Comunity</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section>
+    <main>
+      <div class="bg-and-box">
+        <div class="box">
+        <div class="wrapper">
+          <h1 class="heading">Bring everyone together to build better products</h1>
+        <p class="para">Manage makes it simple for software teams to plan day-to-day 
+          tasks while keeping the larger team goals in view.
+        </p>
+        <button class="b-btn">Get Started</button>
+        </div>
+        </div>
+        <div class="bg-img">
+          <img  class="img" src="images/illustration-intro.svg" alt="">
+
+          
+        </div>
+        <img class="tab" src="images/bg-tablet-pattern.svg" alt="">
+      </div>
+
+
+      <div class="info">
+        <div class="difference">
+          <div class="difference-div">
+            <div class="difference-wrapper">
+            <h1>Whats's different about Manage?</h1>
+          </div>
+          <div class="difference-text">
+            Manage provides all the functionality your team needs, without 
+  the complexity. Our software is tailor-made for modern digital 
+  product teams
+          </div>
+          </div>
+        </div>
+
+        <div class="flex-items-div">
+          <div class="flex-item">
+            <div class="flex-icon">
+              <p>01</p>
+            </div>
+
+            <div class="flex-content">
+              <h3 class="flex-item-heading">Track company-wide progress</h3>
+              <p class="flex-item-para">See how your day-to-day tasks fit into the wider vision. Go from 
+                tracking progress at the milestone level all the way done to the 
+                smallest of details. Never lose sight of the bigger picture again.</p>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-icon">
+              <p>02</p>
+            </div>
+
+            <div class="flex-content">
+              <h3 class="flex-item-heading">Advanced built-in reports</h3>
+              <p class="flex-item-para">Set internal delivery estimates and track progress toward company 
+                goals. Our customisable dashboard helps you build out the reports 
+                you need to keep key stakeholders informed.</p>
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="flex-icon">
+              <p>03</p>
+            </div>
+
+            <div class="flex-content">
+              <h3 class="flex-item-heading"> Everything you need in one place</h3>
+              <p class="flex-item-para"> Stop jumping from one service to another to communicate, store files, 
+                track tasks and share documents. Manage offers an all-in-one team 
+                productivity solution.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="text">
+        <h1 style="font-size: 3.5rem;">What they’ve said</h1>
+      </div>
+      <div class="people-carousel">
+        <div class="carousel-item">
+          <img class="car-logo" src="images/avatar-ali.png" alt="">
+          <h1 class="car-heading">
+            Anisha Li
+          </h1>
+          <p class="car-p">
+            “Manage has supercharged our team’s workflow. The ability to maintain 
+            visibility on larger milestones at all times keeps everyone motivated.”          
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img class="car-logo" src="images/avatar-anisha.png" alt="">
+          <h1 class="car-heading">
+            Ali Bravo
+          </h1>
+          <p class="car-p">
+            “We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused.”
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img class="car-logo" src="images/avatar-richard.png" alt="">
+          <h1 class="car-heading">
+            Richard Watts
+          </h1>
+          <p class="car-p">
+            
+  “Manage allows us to provide structure and process. It keeps us organized 
+  and focused. I can’t stop recommending them to everyone I talk to!”
+          </p>
+        </div>
+        <div class="carousel-item">
+          <img class="car-logo" src="images/avatar-shanai.png" alt="">
+          <h1 class="car-heading">
+            Shanai Gough          
+          </h1>
+          <p class="car-p">
+            “Their software allows us to track, manage and collaborate on our projects 
+            from anywhere. It keeps the whole team in-sync without being intrusive.”
+          
+
+          </p>
+        </div>
+      </div>
+      <button id="prev">prev</button>
+      <button id="next" style="float: right;">next</button>
+
+      <div class="btn" style="display: flex;"> 
+        <button class="out-btn">Button</button>
+      </div>
+      <footer style="display: flex;">
+        <div class="foot-text" style="flex: 1 1 50%; text-align: center;">
+          <h1 style="font-size: 2rem;">Simplify how your team works today.</h1>
+        </div>
+
+        <div style="flex: 1 1 50%; display: flex;
+        justify-content: center;">
+          <button class="strt-btn">Get started</button>
+        </div>
+      </footer>
+    </main>
+  </section>
+</body>
+<script>
+ function IfMatches(mq) {
+  if(mq.matches){
+    console.log(mq)
+    let products = Array.from(document.querySelectorAll('.carousel-item'))
+    let carousel = document.querySelector('.people-carousel');
+    let currentIndex = 0
+    let InSlide = 1
+    let slideWidth = products[0].offsetWidth
+
+
+    function slideTo(Index) {
+        currentIndex = Index;
+
+        var SlideX = -slideWidth * currentIndex * InSlide
+        carousel.style.transform = 'translateX(' + SlideX + 'px)'
+    }
+
+    function nextSlide() {
+        var next = currentIndex + 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (next > maxIndex){
+            next = 0
+        }
+        slideTo(next)
+    }
+
+    function PrevSlide() {
+        var prev = currentIndex - 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (prev < 0){
+            prev = maxIndex 
+        }
+        slideTo(prev)
+    }
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', nextSlide);
+
+    var PrevButton = document.querySelector('#prev');
+    PrevButton.addEventListener('click', PrevSlide);
+  }
+
+else if(window.matchMedia('(max-width:1024px)')){  
+  console.log('auisagdu')
+  let products = Array.from(document.querySelectorAll('.carousel-item'))
+    let carousel = document.querySelector('.people-carousel');
+    let currentIndex = 0
+    let InSlide = 2
+    let slideWidth = products[0].offsetWidth
+
+
+    function slideTo(Index) {
+        currentIndex = Index;
+
+        var SlideX = -slideWidth * currentIndex * InSlide
+        carousel.style.transform = 'translateX(' + SlideX + 'px)'
+    }
+
+    function nextSlide() {
+        var next = currentIndex + 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (next > maxIndex){
+            next = 0
+        }
+        slideTo(next)
+    }
+
+    function PrevSlide() {
+        var prev = currentIndex - 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (prev < 0){
+            prev = maxIndex 
+        }
+        slideTo(prev)
+    }
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', nextSlide);
+
+    var PrevButton = document.querySelector('#prev');
+    PrevButton.addEventListener('click', PrevSlide);
+}
+
+
+  else{
+    console.log(mq)
+let products = Array.from(document.querySelectorAll('.carousel-item'))
+    // let carousel1 = document.getElementsByClassName('carousel')
+    let carousel = document.querySelector('.people-carousel');
+    let currentIndex = 0
+    let InSlide = 3
+    let slideWidth = products[0].offsetWidth
+
+
+    function slideTo(Index) {
+        currentIndex = Index;
+
+        var SlideX = -slideWidth * currentIndex * InSlide
+        carousel.style.transform = 'translateX(' + SlideX + 'px)'
+    }
+
+
+    function nextSlide() {
+        var next = currentIndex + 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (next > maxIndex){
+            next = 0
+        }
+        slideTo(next)
+    }
+
+    function PrevSlide() {
+        var prev = currentIndex - 1
+        var maxIndex = Math.ceil(products.length / InSlide) - 1;
+        if (prev < 0){
+            prev = maxIndex 
+        }
+        slideTo(prev)
+    }
+
+    var nextButton = document.querySelector('#next');
+    nextButton.addEventListener('click', nextSlide);
+
+    var PrevButton = document.querySelector('#prev');
+    PrevButton.addEventListener('click', PrevSlide);
+  }
+}
+  let media = window.matchMedia('(max-width:767px)')
+  IfMatches(media)
+
+</script>
+</script>
+</html>
